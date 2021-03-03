@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'firstFEapp';
-  firstMediaItem = {
+  mediaItems = {
     id:1,
     name:`Naruto`,
     type:"Anime",

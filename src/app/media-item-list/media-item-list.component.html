@@ -1,0 +1,10 @@
+<section>
+    <div class="container row">
+    
+    <app-media-item class=" col-lg-4 col-md-6 col-sm-12"
+     *ngFor="let mediaItem of mediaItems "
+      [mediaItem]="mediaItem"
+        (delete)="onMediaItemDelete($event)"></app-media-item>
+    
+</div>
+</section>
