@@ -13,6 +13,7 @@ export class MediaItemListComponent implements OnInit {
   }
   mediaItems = [{
     id:1,
+    medium:"series",
     name:`Naruto`,
     type:"Anime",
     lengthOfEpisode:`20m`,
@@ -23,6 +24,7 @@ export class MediaItemListComponent implements OnInit {
   {
     id:2,
     name:`Vikings`,
+    medium:"series",
     type:"Action",
     lengthOfEpisode:`45m`,
     wasWatched:"Was watched",
@@ -32,6 +34,7 @@ export class MediaItemListComponent implements OnInit {
   {
     id:3,
     name:`Breaking Bad`,
+    medium:"series",
     type:"Thriller",
     lengthOfEpisode:`55m`,
     wasWatched:"Was watched",
@@ -41,6 +44,7 @@ export class MediaItemListComponent implements OnInit {
   {
     id:4,
     name:`Walking Dead`,
+    medium:"series",
     type:"Action",
     lengthOfEpisode:`40m`,
     wasWatched:"Was watched",
@@ -49,7 +53,8 @@ export class MediaItemListComponent implements OnInit {
   },
   {
     id:5,
-    name:`Boruto`,
+    name:`72 hodin`,
+    medium:"movie",
     type:"Anime",
     lengthOfEpisode:`20m`,
     wasWatched:"Was watched",
@@ -59,6 +64,7 @@ export class MediaItemListComponent implements OnInit {
   {
     id:6,
     name:`How I met your mother`,
+    medium:"series",
     type:"Comedy",
     lengthOfEpisode:`30m`,
     wasWatched:"Was watched",
@@ -66,7 +72,7 @@ export class MediaItemListComponent implements OnInit {
     wasWatchedOn: "7/2/2019"
   }]
   onMediaItemDelete(e){
-    
+
   }
 
 }

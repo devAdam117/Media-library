@@ -5,6 +5,7 @@
   border: 2px solid white;
   height: fit-content;
   border-radius: 0.7rem;
+  padding: 4ch 4ch;
 }
 .item h2 {
   margin-top: 2px;
