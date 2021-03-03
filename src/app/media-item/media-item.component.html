@@ -1,19 +1,19 @@
-<div class="item col-lg-3 col-md-6 col-sm-12 mt-3" > 
+<div  class="item col-lg-3 col-md-6 col-sm-12 mt-3" > 
 <div class="info">
-<h2> Naruto </h2>
-<div> Anime </div>
-<div> 20m </div>
-<div> Episodes: 750</div>
-<div> Publish date 10/11/1999 </div>
+<h2 > {{mediaItem.name}} </h2>
+<div> {{mediaItem.type}} | {{mediaItem.wasWatched}} </div>
+<div> Length of episode: {{mediaItem.lengthOfEpisode}} </div>
+<div> Episodes: {{mediaItem.episodes}}</div>
+<div> Last wacth on:  {{mediaItem.wasWatchedOn}} </div>
 </div>
 <div class="tools">
     
     
-    <a class="btn btn-danger ml-1 mr-1"href="delete">remove
+    <a class="btn btn-danger ml-1 mr-1" (click)="onDelete()">Remove
 
     </a>
 
-    <a class="btn btn-primary mr-1 ml-1" href="details">watch
+    <a class="btn btn-primary mr-1 ml-1">Watch
 
     </a>
 
