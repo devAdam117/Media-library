@@ -9,16 +9,16 @@
 <div> Episodes: {{mediaItem.episodes}}</div>
 <div> Was watched on:  {{mediaItem.wasWatchedOn}} </div>
 </div>
-<div class="tools mt-1">
+<div class="tools mt-1 ">
     
-    
-    <a class="btn btn-danger ml-1 mr-1" (click)="onDelete()">Remove
+    <a class="btn btn-danger ml-1 mr-1  " (click)="onDelete()">Remove
 
     </a>
 
-    <a class="btn btn-primary mr-1 ml-1">Watch
+    <a class="btn btn-primary mr-1 ml-1 ">Watch
 
     </a>
+    <span class="fa fa-star ml-2" (click)="ratingFunc()"[class.rate]="isRated"></span>
 
 
 </div>

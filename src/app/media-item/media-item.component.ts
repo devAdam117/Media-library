@@ -16,6 +16,12 @@ export class MediaItemComponent implements OnInit {
  console.log("delete");
  this.delete.emit(this.mediaItem);
   }
+
+  isRated= false;
+  ratingFunc(){
+    this.isRated=!this.isRated;
+    
+  }
   
 
 }
