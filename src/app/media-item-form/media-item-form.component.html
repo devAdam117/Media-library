@@ -2,33 +2,33 @@
     <h2>Add Media to your Library</h2>
 </header>
 <form 
-#mediaItemForm="ngForm"
-(ngSubmit)="onSubmit(mediaItemForm.value)"
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)"
 >
     <ul>
         <li> 
             <label for="name">Name of movie or serie</label>           
-            <input name="name" type="text" id="name " placeholder="How I met your mother" ngModel>
+            <input name="name" type="text" id="name" placeholder="How I met your mother" formControlName="name">
         </li>
         <li>
             <label for="medium">Type</label>
-            <select name="medium" id="medium" ngModel>
+            <select name="medium" id="medium" formControlName="medium">
                 <option value="Movies">Movie</option>
                 <option value="Series">Serie</option>
             </select>
         </li>
         <li>
             <label for="episodeLength">Length of episode</label>
-            <input ngModel name="lengthOfEP"type="text" id="name" placeholder="1h 30m">
+            <input  name="lengthOfEP"type="text" id="name" placeholder="1h 30m" formControlName="lengthOfEP">
         </li>
         <li>
-            <label for="episodeLength">Number of episodes/seasons</label>
-            <input name="numberOfEp" type="text" id="name" placeholder="10e/15s" ngModel>
+            <label for="numberOfEp">Number of episodes/seasons</label>
+            <input name="numberOfEp" type="text" id="name" placeholder="10e/15s" formControlName="numberOfEp">
         </li>
         <li>
             <label for="whenWatched">Was watched on</label>
-            <input name = "whenWatched"type="text" placeholder="mm/yyyy" ngModel>
+            <input name = "whenWatched"type="text" placeholder="mm/yyyy" formControlName="whenWatched">
         </li>
     </ul>
-    <button type="submit">Save</button>
+    <button [ngClass]="{disabled : !form.valid}" type="submit" [disabled]="!form.valid">Save</button>
 </form>

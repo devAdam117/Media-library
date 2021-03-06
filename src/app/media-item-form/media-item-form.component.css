@@ -50,18 +50,22 @@ select:hover {
 }
 button {
   transition: 0.4s;
-  background: rgba(15, 128, 39, 0.788);
+  background: rgba(15, 128, 39, 0.87);
   padding: 0.5rem 1.1rem;
   border-radius: 2.3rem;
-  color: rgba(78, 78, 235, 0.966);
+  color: rgb(66, 66, 230);
   font-size: 1.2rem;
   font-weight: 700;
   border: 2px solid rgba(89, 89, 233, 0.64);
   outline: none;
   margin-left: 13rem;
+  margin-bottom: 0.2rem;
 }
 button:hover {
   background: transparent;
   border: 2px solid rgb(15, 128, 39);
   color: rgba(15, 128, 39, 0.788);
+}
+.disabled {
+  background: rgba(15, 128, 39, 0.432);
 }
