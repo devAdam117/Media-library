@@ -1,0 +1,33 @@
+<header>
+    <h2>Add Media to your Library</h2>
+</header>
+<form 
+#mediaItemForm="ngForm"
+(ngSubmit)="onSubmit(mediaItemForm.value)"
+>
+    <ul>
+        <li>            
+            <input name="name" type="text" id="name " placeholder="Name" ngModel>
+        </li>
+        <li>
+            <label for="medium">Type</label>
+            <select name="medium" id="medium" ngModel>
+                <option value="Movies">Movie</option>
+                <option value="Series">Serie</option>
+            </select>
+        </li>
+        <li>
+            <label for="episodeLength">Length of episode</label>
+            <input ngModel name="lengthOfEP"type="text" id="name" placeholder="1h 30m">
+        </li>
+        <li>
+            <label for="episodeLength">Number of episodes/seasons</label>
+            <input name="numberOfEp" type="text" id="name" placeholder="10e/15s" ngModel>
+        </li>
+        <li>
+            <label for="whenWatched">Was watched on</label>
+            <input name = "whenWatched"type="text" placeholder="mm/yyyy" ngModel>
+        </li>
+    </ul>
+    <button type="submit" class="btn">Save</button>
+</form>
