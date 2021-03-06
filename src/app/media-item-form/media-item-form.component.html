@@ -17,9 +17,13 @@
                 <option value="Series">Serie</option>
             </select>
         </li>
+        <li> 
+            <label for="type">Type of movie or serie</label>           
+            <input [ngClass]="{'borderBot': form.get('type').valid}" name="type" type="text" id="type" placeholder="Comedy" formControlName="type">
+        </li>
         <li>
             <label for="episodeLength">Length of episode</label>
-            <input [ngClass]="{'borderBot': form.get('lengthOfEP').valid}"  [class.borderBot]="filled2" name="lengthOfEP" type="text" id="name" placeholder="1h 30m" formControlName="lengthOfEP">
+            <input [ngClass]="{'borderBot': form.get('lengthOfEP').valid}"   name="lengthOfEP" type="text" id="name" placeholder="1h 30m" formControlName="lengthOfEP">
         </li>
         <li>
             <label for="numberOfEp">Number of episodes/seasons</label>

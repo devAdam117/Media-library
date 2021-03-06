@@ -7,6 +7,7 @@ import { MediaItemComponent } from './media-item/media-item.component';
 import { MediaItemListComponent } from './media-item-list/media-item-list.component';
 import { TitleComponent } from './title/title.component';
 import { MediaItemFormComponent } from './media-item-form/media-item-form.component';
+import {MediaItemService} from './media-item-service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { MediaItemFormComponent } from './media-item-form/media-item-form.compon
     BrowserModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  
+  providers: [
+    MediaItemService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

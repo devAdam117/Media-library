@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Validators, FormGroup, FormControl} from '@angular/forms'
+import {Validators, FormBuilder} from '@angular/forms'
+import { MediaItemService } from '../media-item-service';
 
 @Component({
   selector: 'app-media-item-form',
@@ -8,15 +9,18 @@ import {Validators, FormGroup, FormControl} from '@angular/forms'
 })
 export class MediaItemFormComponent implements OnInit {
   form;
+
   
   onSubmit (mediaItem) {
-    console.log(mediaItem);
+    //toto je ako keby sme si obrali klasu z ineho komponentu
+    // bereme sevice vlastne..
+    this.mediaItemService.add(mediaItem);
   }
-  filled1=false;
+  /*filled1=false;
   filled2=false;
   filled3=false;
   filled4=false;
-  /*modelChange1(e){
+  modelChange1(e){
     e ? this.filled1=true : this.filled1=false;     
   }
   modelChange2(e){
@@ -31,15 +35,17 @@ export class MediaItemFormComponent implements OnInit {
   //supacky sposob, skoda :-/ Haha tak nie :D kaso zacranil
 
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder, private mediaItemService : MediaItemService) { }
 
   ngOnInit() {
-    this.form=new FormGroup({
-      name: new FormControl('',Validators.required),
-      medium: new FormControl('', Validators.required),
-      lengthOfEP: new FormControl('',Validators.required),      
-      numberOfEp: new FormControl('',Validators.required),
-      whenWatched: new FormControl('',Validators.required),
+    this.form=this.formBuilder.group({
+      name: this.formBuilder.control('',Validators.required),
+      medium: this.formBuilder.control('', Validators.required),
+      type: this.formBuilder.control('',Validators.required),
+      lengthOfEP: this.formBuilder.control('',Validators.required),      
+      numberOfEp: this.formBuilder.control('',Validators.required),
+      whenWatched: this.formBuilder.control('',Validators.required),
+      
 
     });
   }

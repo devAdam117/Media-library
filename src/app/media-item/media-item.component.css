@@ -41,15 +41,15 @@
 .rate {
   color: orange;
 }
-.movies {
+.series {
   border: 2px solid rgb(11, 97, 11);
 }
-.movies h2 {
+.series h2 {
   color: rgb(26, 196, 26);
 }
-.series {
+.movies {
   border: 2px solid white;
 }
-.series h2 {
+.movies h2 {
   color: rgb(8, 124, 201);
 }
