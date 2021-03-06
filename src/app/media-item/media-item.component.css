@@ -16,6 +16,7 @@
   font-weight: 600;
   font-size: 1.05rem;
   text-align: left;
+  line-height: 1.25;
 }
 .item a {
   cursor: pointer;
@@ -24,8 +25,7 @@
   background: rgba(54, 56, 56, 0.829);
   color: white;
   transform: scale(1.04);
-  border: 3px solid rgb(18, 86, 187);
-  opacity: 100%;
+  border: 2px solid rgb(18, 86, 187);
 }
 .item:hover + .item h2 {
   color: red;
@@ -35,10 +35,21 @@
   margin-top: 1rem;
   cursor: pointer;
   transition: 0.4s;
+  color: white;
 }
-.fa-star:hover {
-  font-size: 2.3rem;
-}
+
 .rate {
   color: orange;
+}
+.movies {
+  border: 2px solid rgb(11, 97, 11);
+}
+.movies h2 {
+  color: rgb(26, 196, 26);
+}
+.series {
+  border: 2px solid white;
+}
+.series h2 {
+  color: rgb(8, 124, 201);
 }

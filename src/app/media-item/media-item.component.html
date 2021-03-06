@@ -1,13 +1,13 @@
-<div class=" ml-3 item col-lg-11  col-md-12 col-sm-12 mt-5" > 
+<div [ngClass]="{'movies':mediaItem.medium==='movie','series':mediaItem.medium==='series'}"class=" ml-3 item col-lg-11  col-md-12 col-sm-12 mt-5" > 
 <div class="info">
-<h2 > {{mediaItem.name}} </h2>
+<h2 > {{mediaItem.name }} </h2>
 <div> {{mediaItem.type}} </div>
 <ng-template [ngIf]="mediaItem.wasWatched">
-<div> {{ mediaItem.wasWatched }}</div> 
+<div> {{ mediaItem.wasWatched  }}</div> 
 </ng-template>
 <div> Length of episode: {{mediaItem.lengthOfEpisode}} </div>
 <div> Episodes: {{mediaItem.episodes}}</div>
-<div> Was watched on:  {{mediaItem.wasWatchedOn}} </div>
+<div> Was watched on:  {{mediaItem.wasWatchedOn | date:"MMMM YYYY"}} </div>
 </div>
 <div class="tools mt-1 ">
     
