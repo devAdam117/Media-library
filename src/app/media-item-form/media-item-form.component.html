@@ -8,27 +8,27 @@
     <ul>
         <li> 
             <label for="name">Name of movie or serie</label>           
-            <input name="name" type="text" id="name" placeholder="How I met your mother" formControlName="name">
+            <input [ngClass]="{'borderBot': form.get('name').valid}" name="name" type="text" id="name" placeholder="How I met your mother" formControlName="name">
         </li>
         <li>
             <label for="medium">Type</label>
             <select name="medium" id="medium" formControlName="medium">
-                <option value="Movies">Movie</option>
+                <option value="Movies">Movies</option>
                 <option value="Series">Serie</option>
             </select>
         </li>
         <li>
             <label for="episodeLength">Length of episode</label>
-            <input  name="lengthOfEP"type="text" id="name" placeholder="1h 30m" formControlName="lengthOfEP">
+            <input [ngClass]="{'borderBot': form.get('lengthOfEP').valid}"  [class.borderBot]="filled2" name="lengthOfEP" type="text" id="name" placeholder="1h 30m" formControlName="lengthOfEP">
         </li>
         <li>
             <label for="numberOfEp">Number of episodes/seasons</label>
-            <input name="numberOfEp" type="text" id="name" placeholder="10e/15s" formControlName="numberOfEp">
+            <input  [ngClass]="{'borderBot': form.get('numberOfEp').valid}" name="numberOfEp" type="text" id="name" placeholder="10e/15s" formControlName="numberOfEp">
         </li>
         <li>
             <label for="whenWatched">Was watched on</label>
-            <input name = "whenWatched"type="text" placeholder="mm/yyyy" formControlName="whenWatched">
+            <input  [ngClass]="{'borderBot': form.get('whenWatched').valid}" name = "whenWatched" type="text" placeholder="mm/yyyy" formControlName="whenWatched">
         </li>
     </ul>
-    <button [ngClass]="{disabled : !form.valid}" type="submit" [disabled]="!form.valid">Save</button>
+    <button [ngClass]="{disabled : (!form.get('name').valid || !form.get('medium').valid)}" type="submit" [disabled]="(!form.get('name').valid || !form.get('medium').valid)">Save</button>
 </form>

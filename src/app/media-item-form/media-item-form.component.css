@@ -1,6 +1,7 @@
 form {
   width: fit-content;
-  box-shadow: 1px 1px 6px rgb(15, 47, 228);
+  box-shadow: 1px 1px 3px rgba(150, 15, 228, 0.733);
+  padding: 0.21rem;
 }
 form ul li input,
 form ul li select {
@@ -16,21 +17,23 @@ input {
   transition: 0.4s;
   background: transparent;
   border: none;
-  border-bottom: 2px solid rgba(89, 89, 233, 0.637);
+  border-bottom: 2px solid rgba(70, 70, 218, 0.692);
   outline: none;
   width: 70%;
+  font-size: 1.07rem;
+  font-weight: 500;
 }
 ::placeholder {
   color: rgb(0, 0, 0);
   opacity: 1; /* Firefox */
-  font-weight: 400;
+  font-weight: 500;
 }
 
 input:focus {
-  border-bottom: 2px solid rgba(123, 24, 204, 0.836);
+  border-bottom: 2px solid rgba(117, 24, 204, 0.473);
 }
 form label {
-  font-size: 1.24rem;
+  font-size: 1.33rem;
   font-weight: 600;
 }
 select {
@@ -39,23 +42,27 @@ select {
   border: rgba(89, 89, 233, 0.637);
   border-radius: 0.3rem;
   width: 30%;
+  font-size: 1.07rem;
+  font-weight: 500;
 }
 option {
   background: rgba(89, 89, 233, 0.637);
   border: 30px solid black;
   border-radius: 0.3rem;
+  font-size: 1.07rem;
+  font-weight: 500;
 }
 select:hover {
   background: rgba(89, 89, 233, 0.64);
 }
 button {
   transition: 0.4s;
-  background: rgba(15, 128, 39, 0.87);
+  background: rgba(83, 22, 153, 0.87);
   padding: 0.5rem 1.1rem;
   border-radius: 2.3rem;
-  color: rgb(66, 66, 230);
+  color: rgb(130, 130, 219);
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   border: 2px solid rgba(89, 89, 233, 0.64);
   outline: none;
   margin-left: 13rem;
@@ -63,9 +70,14 @@ button {
 }
 button:hover {
   background: transparent;
-  border: 2px solid rgb(15, 128, 39);
-  color: rgba(15, 128, 39, 0.788);
+  border: 2px solid rgba(83, 22, 153, 0.87);
+  color: rgba(83, 22, 153, 0.87);
 }
 .disabled {
-  background: rgba(15, 128, 39, 0.432);
+  background: rgba(178, 59, 214, 0.432);
+  color: white;
+}
+
+.borderBot {
+  border-bottom: 2px solid rgba(144, 74, 202, 0.76);
 }
