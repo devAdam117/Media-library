@@ -6,8 +6,9 @@
 (ngSubmit)="onSubmit(mediaItemForm.value)"
 >
     <ul>
-        <li>            
-            <input name="name" type="text" id="name " placeholder="Name" ngModel>
+        <li> 
+            <label for="name">Name of movie or serie</label>           
+            <input name="name" type="text" id="name " placeholder="How I met your mother" ngModel>
         </li>
         <li>
             <label for="medium">Type</label>
@@ -29,5 +30,5 @@
             <input name = "whenWatched"type="text" placeholder="mm/yyyy" ngModel>
         </li>
     </ul>
-    <button type="submit" class="btn">Save</button>
+    <button type="submit">Save</button>
 </form>
