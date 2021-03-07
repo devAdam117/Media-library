@@ -23,8 +23,8 @@ export class MediaItemFormComponent implements OnInit  {
   @Output() myEvent = new EventEmitter();
   public onSubmit (mediaItem) {   
     this.mediaItemService.add(mediaItem);
-    //this.onSub.ngOnInit();
-    //this.onSub.searchName(); 
+    this.onSub.ngOnInit();
+    this.onSub.searchName(); 
    
     
   }

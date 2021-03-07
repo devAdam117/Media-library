@@ -12,12 +12,17 @@ mediaItems= [];
   constructor(private mediaItemService : MediaItemService) { }
   name:string="";
   sortedItems;  
-  public searchName(){      
-      this.sortedItems=this.mediaItems.filter(res=>{      
-      return res.name.toLocaleLowerCase().match(this.name.toLocaleLowerCase());
-            
-   })
-   console.log(this.name) 
+  public searchName(){   
+    
+    if(!this.name)  {
+      return this.sortedItems=this.mediaItems;
+    }
+    else {
+       this.sortedItems=this.mediaItems.filter(res=>{      
+        return res.name.toLocaleLowerCase().includes(this.name.toLocaleLowerCase());
+        
+   })}
+    
 
   }
   public ngOnInit(): void {    
