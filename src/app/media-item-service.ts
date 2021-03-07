@@ -1,9 +1,11 @@
 import { HttpClient } from '@angular/common/http';
+import { MediaItemListComponent } from './media-item-list/media-item-list.component';
 
 export class MediaItemService {
   constructor(){
 
   }
+    
     get() {
         return this.mediaItems;
     }

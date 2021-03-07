@@ -86,9 +86,18 @@ button:hover {
 .borderBot {
   border-bottom: 2px solid rgba(144, 74, 202, 0.76);
 }
-
+.container {
+  display: block;
+}
 .disBtn {
   margin-top: 0.3rem;
   margin-bottom: 0.4rem;
   margin-left: 0rem;
+}
+.searchInput {
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  width: 80%;
 }

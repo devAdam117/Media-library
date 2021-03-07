@@ -13,6 +13,7 @@ import { MediaItemListComponent } from './media-item-list/media-item-list.compon
 import { TitleComponent } from './title/title.component';
 import { MediaItemFormComponent } from './media-item-form/media-item-form.component';
 import {MediaItemService} from './media-item-service';
+import { FormsModule } from '@angular/forms';
 
 const lookUpList = {
   mediums: ['Movies','Series']
@@ -29,7 +30,8 @@ const lookUpList = {
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   
   providers: [
