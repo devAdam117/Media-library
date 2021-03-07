@@ -19,4 +19,7 @@ export class AppComponent {
   onMediaIteamDelete(e){
     console.log(e);
   }
+  
+  
+
 }

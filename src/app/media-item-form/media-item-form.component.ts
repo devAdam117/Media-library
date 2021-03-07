@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import {Validators, FormBuilder} from '@angular/forms'
 import { MediaItemService } from '../media-item-service';
 
@@ -10,7 +10,11 @@ import { MediaItemService } from '../media-item-service';
 export class MediaItemFormComponent implements OnInit {
   form;
 
-  
+  formDis=false;
+  displayForm(){
+    this.formDis=! this.formDis;    
+  }
+
   onSubmit (mediaItem) {
     //toto je ako keby sme si obrali klasu z ineho komponentu
     // bereme sevice vlastne..
@@ -35,7 +39,7 @@ export class MediaItemFormComponent implements OnInit {
   //supacky sposob, skoda :-/ Haha tak nie :D kaso zacranil
 
 
-  constructor(private formBuilder: FormBuilder, private mediaItemService : MediaItemService) { }
+  constructor(private formBuilder: FormBuilder, private mediaItemService : MediaItemService , @Inject ('lookUpListToken') public lookUpList) { }
 
   ngOnInit() {
     this.form=this.formBuilder.group({

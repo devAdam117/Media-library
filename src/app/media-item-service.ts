@@ -1,4 +1,9 @@
+import { HttpClient } from '@angular/common/http';
+
 export class MediaItemService {
+  constructor(){
+
+  }
     get() {
         return this.mediaItems;
     }

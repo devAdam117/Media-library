@@ -1,7 +1,12 @@
+<div class="container "> 
 <header>
     <h2>Add Media to your Library</h2>
 </header>
+<button  class="disBtn" (click)="displayForm()">Add new media</button>
+</div>
+
 <form 
+[ngClass]="{'_form': !formDis}"
 [formGroup]="form"
 (ngSubmit)="onSubmit(form.value)"
 >
@@ -13,8 +18,8 @@
         <li>
             <label for="medium">Type</label>
             <select name="medium" id="medium" formControlName="medium">
-                <option value="Movies">Movies</option>
-                <option value="Series">Serie</option>
+                <option *ngFor="let medium of lookUpList.mediums" value={{medium}}>{{medium}}</option>
+                
             </select>
         </li>
         <li> 
