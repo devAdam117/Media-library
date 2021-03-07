@@ -5,7 +5,7 @@
   border: 2px solid white;
   height: fit-content;
   border-radius: 0.7rem;
-  padding: 4ch 4ch;
+  padding: 5ch 5ch;
   transition: 0.4s;
 }
 .item h2 {
@@ -41,6 +41,9 @@
 .rate {
   color: orange;
 }
+.fa:active {
+  color: rgba(255, 166, 0, 0.219);
+}
 .series {
   border: 2px solid rgb(11, 97, 11);
 }
@@ -52,4 +55,39 @@
 }
 .movies h2 {
   color: rgb(8, 124, 201);
+}
+
+.tools {
+  width: 100%;
+}
+.rmvbtn:hover {
+  background: transparent;
+  color: #dc3545 !important;
+}
+.rmvbtn:active {
+  background: #dc354652 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+.wtchbtn:hover {
+  background: transparent;
+  color: #007bff !important;
+}
+.wtchbtn:active {
+  background: #007bff56 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+@media only screen and (max-width: 352px) {
+  ._toolComp {
+    display: flex;
+    width: fit-content;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  ._toolComp {
+    display: flex;
+    width: fit-content;
+  }
 }
