@@ -17,7 +17,7 @@ mediaItems= [];
   public searchName(){
     
     if(!this.inputVal)  { 
-      return  this.sortedItems=this.mediaItems, console.log(this.sortedItems),console.log(this.mediaItems); ; 
+      return  this.sortedItems=this.mediaItems; 
     }
     else if(this.inputVal) {
        this.sortedItems=this.mediaItems.filter(res=>{      
