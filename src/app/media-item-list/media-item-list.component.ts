@@ -9,31 +9,32 @@ import { MediaItemService } from '../media-item-service';
 })
 export class MediaItemListComponent implements OnInit {
 mediaItems= [];
-  constructor(private mediaItemService : MediaItemService) { }
-  name:string="";
-  sortedItems;  
-  public searchName(){   
+  constructor(private mediaItemService : MediaItemService) {}
+  inputVal:string="";
+  sortedItems=[];  
+  valuInside;
+  typBool=true;  
+  public searchName(){
     
-    if(!this.name)  {
-      return this.sortedItems=this.mediaItems;
+    if(!this.inputVal)  { 
+      return  this.sortedItems=this.mediaItems, console.log(this.sortedItems),console.log(this.mediaItems); ; 
     }
-    else {
+    else if(this.inputVal) {
        this.sortedItems=this.mediaItems.filter(res=>{      
-        return res.name.toLocaleLowerCase().includes(this.name.toLocaleLowerCase());
-        
+        return res.name.toLocaleLowerCase().includes(this.inputVal.toLocaleLowerCase()) ;
+         
    })}
-    
-
-  }
-  public ngOnInit(): void {    
-    this.mediaItems=this.mediaItemService.get();     
-      this.sortedItems=this.mediaItems;
+  }  
+  public ngOnInit(): void {      
+    this.mediaItems=this.mediaItemService.get();        
+      this.sortedItems=this.mediaItems;     
   }
  
   onMediaItemDelete(mediaItem){
     this.mediaItemService.delete(mediaItem);
-    this.sortedItems=this.mediaItems;
-
+    this.sortedItems=this.mediaItems.filter(res=>{      
+      return res.name.toLocaleLowerCase().includes(this.inputVal.toLocaleLowerCase()) ;       
+ })
     }
   
     

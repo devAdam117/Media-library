@@ -17,10 +17,10 @@ export class MediaItemComponent implements OnInit {
     };
 
   ngOnInit(): void {
-    console.log(this.mediaItem);
+    //console.log(this.mediaItem);
   }
   onDelete() {
- console.log("delete");
+ //console.log("delete");
  this.delete.emit(this.mediaItem);
   }
 

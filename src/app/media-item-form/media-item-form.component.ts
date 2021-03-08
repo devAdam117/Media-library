@@ -12,21 +12,18 @@ import { MediaItemService } from '../media-item-service';
   styleUrls: ['./media-item-form.component.css']
 })
 export class MediaItemFormComponent implements OnInit  {
-  form;
-  
+  form;  
   @Input() mediaItem;
-  formDis=false;
+  formDis:boolean=false;
   displayForm(){
     this.formDis=! this.formDis;    
   }
   
   @Output() myEvent = new EventEmitter();
   public onSubmit (mediaItem) {   
-    this.mediaItemService.add(mediaItem);
-    this.onSub.ngOnInit();
-    this.onSub.searchName(); 
-   
-    
+    this.mediaItemService.add(mediaItem);      
+    this.onSub.ngOnInit();    
+    this.onSub.searchName();   
   }
   constructor(private formBuilder: FormBuilder, private mediaItemService : MediaItemService , @Inject ('lookUpListToken') 
   public lookUpList,private onSub:MediaItemListComponent) { }
