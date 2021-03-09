@@ -1,5 +1,5 @@
 import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
-
+import { MediaItemService } from '../media-item-service'
 
 @Component({
   selector: 'app-media-item',
@@ -9,24 +9,48 @@ import { Component, OnInit, Input , Output, EventEmitter} from '@angular/core';
 export class MediaItemComponent implements OnInit {
   @Input() mediaItem;
   name:string;
+  mediaArray;
   @Output() delete = new EventEmitter();
-  constructor() { }
+  constructor(private mediaItemService :MediaItemService) { }
   searchName(){
    
     
     };
 
   ngOnInit(): void {
-    //console.log(this.mediaItem);
+    console.log(this.mediaItem);
   }
   onDelete() {
  //console.log("delete");
  this.delete.emit(this.mediaItem);
+ 
   }
 
-  isRated= false;
-  ratingFunc(){
-    this.isRated=!this.isRated;
+  isRated:boolean=false;
+  ratingFunc(){    
+    
+    //this.isRated=!this.isRated; 
+    this.mediaArray=this.mediaItemService.get();    
+    localStorage.clear();
+    let index = this.mediaArray.map(o => o.name).indexOf(this.mediaItem.name)
+    if(this.mediaArray[index].star){
+      this.mediaArray[index].star=false;  
+    this.mediaItem.star=false;
+     
+    } 
+    else {
+      this.mediaArray[index].star=true;
+      this.mediaItem.star=true;
+    
+    }      
+        console.log(this.mediaItem.star)
+        localStorage.setItem("medias", JSON.stringify(this.mediaArray));
+        
+    
+
+    
+    
+   
     
   }
   

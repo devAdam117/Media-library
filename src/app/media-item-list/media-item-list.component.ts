@@ -8,33 +8,43 @@ import { MediaItemService } from '../media-item-service';
   styleUrls: ['./media-item-list.component.css']
 })
 export class MediaItemListComponent implements OnInit {
-mediaItems= [];
+  mediaArray= [];
   constructor(private mediaItemService : MediaItemService) {}
   inputVal:string="";
-  sortedItems=[];  
-  valuInside;
-  typBool=true;  
+  sortedItems=[];    
   public searchName(){
-    
+    this.mediaArray=this.mediaItemService.get();
     if(!this.inputVal)  { 
-      return  this.sortedItems=this.mediaItems; 
+      return  this.sortedItems=this.mediaArray; 
     }
     else if(this.inputVal) {
-       this.sortedItems=this.mediaItems.filter(res=>{      
+       this.sortedItems=this.mediaArray.filter(res=>{      
         return res.name.toLocaleLowerCase().includes(this.inputVal.toLocaleLowerCase()) ;
          
    })}
   }  
+  refreshPage (mediaItem) {
+    console.log("Page has been updated")
+    this.mediaItemService.add(mediaItem); 
+    this.sortedItems=this.mediaItemService.get();       
+    console.log("With new media named:"+this.sortedItems[this.sortedItems.length-1].name);
+    
+  }
+
   public ngOnInit(): void {      
-    this.mediaItems=this.mediaItemService.get();        
-      this.sortedItems=this.mediaItems;     
+    this.sortedItems=this.mediaItemService.get();   
+      
+      
   }
  
   onMediaItemDelete(mediaItem){
+   
     this.mediaItemService.delete(mediaItem);
-    this.sortedItems=this.mediaItems.filter(res=>{      
+    this.mediaArray=this.mediaItemService.get();
+    this.sortedItems=this.mediaArray.filter(res=>{      
       return res.name.toLocaleLowerCase().includes(this.inputVal.toLocaleLowerCase()) ;       
  })
+ //this.mediaArray=this.mediaItemService.get();
     }
   
     

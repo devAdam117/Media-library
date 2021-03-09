@@ -21,9 +21,10 @@ export class MediaItemFormComponent implements OnInit  {
   
   @Output() myEvent = new EventEmitter();
   public onSubmit (mediaItem) {   
-    this.mediaItemService.add(mediaItem);      
-    this.onSub.ngOnInit();    
-    this.onSub.searchName();   
+    //this.mediaItemService.add(mediaItem);    
+    //this.mediaArray=this.mediaItemService.get();
+    this.onSub.refreshPage(mediaItem);    
+   // this.onSub.searchName();   
   }
   constructor(private formBuilder: FormBuilder, private mediaItemService : MediaItemService , @Inject ('lookUpListToken') 
   public lookUpList,private onSub:MediaItemListComponent) { }
@@ -35,9 +36,11 @@ export class MediaItemFormComponent implements OnInit  {
       type: this.formBuilder.control('',Validators.required),
       lengthOfEP: this.formBuilder.control('',Validators.required),      
       numberOfEp: this.formBuilder.control('',Validators.required),
-      whenWatched: this.formBuilder.control('',Validators.required),   
+      whenWatched: this.formBuilder.control('',Validators.required), 
+      star :  false,
 
     });
+    
     
   }
   

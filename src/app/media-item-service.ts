@@ -7,15 +7,42 @@ export class MediaItemService {
   }
     
     get() {
-        return this.mediaItems;
+      if(!JSON.parse(localStorage.getItem("medias"))){
+        let empyArr=[];
+        localStorage.setItem("medias", JSON.stringify(empyArr));       
+      }
+        return this.mediaItems=JSON.parse(localStorage.getItem("medias")) ;
     }
     add(mediaItem) {
-        this.mediaItems.push(mediaItem);
+      
+      if(!JSON.parse(localStorage.getItem("medias"))){
+        let empyArr=[];
+        localStorage.setItem("medias", JSON.stringify(empyArr));       
+      }
+      else {
+      let mediaArray = JSON.parse(localStorage.getItem("medias"));     
+      mediaItem.id=mediaArray.length+1;
+      mediaArray.push(mediaItem);      
+      localStorage.setItem("medias", JSON.stringify(mediaArray));
+      }
+        
     }
     delete (mediaItem) {
-        let index=this.mediaItems.indexOf(mediaItem);
-       index>=0 ?  this.mediaItems.splice(index,1): 0;
+                
+        let mediaArray = JSON.parse(localStorage.getItem("medias"));
+       // mediaArray = mediaArray.filter(x => x.id !== mediaItem.id)       
+        
+       let index = mediaArray.map(o => o.name).indexOf(mediaItem.name)
+        console.log(index);
+       index>=0 ?  mediaArray.splice(index,1): 0;
 
+       // vratim spat
+       localStorage.setItem("medias", JSON.stringify(mediaArray));
+       
+
+    }
+    deleteLocal () {
+      
     }
     mediaItems = [{
         id:1,
