@@ -5,6 +5,7 @@ import { MediaItemListComponent } from '../media-item-list/media-item-list.compo
 import { MediaItemService } from '../media-item-service';
 
 
+
 @Component({
   selector: 'app-media-item-form',
   providers:[MediaItemListComponent],
@@ -31,7 +32,7 @@ export class MediaItemFormComponent implements OnInit  {
 
   ngOnInit() {
     this.form=this.formBuilder.group({
-      name: this.formBuilder.control('',Validators.required),
+      name: this.formBuilder.control('',Validators.compose([Validators.required])),
       medium: this.formBuilder.control('', Validators.required),
       type: this.formBuilder.control('',Validators.required),
       lengthOfEP: this.formBuilder.control('',Validators.required),      
@@ -40,7 +41,7 @@ export class MediaItemFormComponent implements OnInit  {
       star :  false,
 
     });
-    
+      
     
   }
   

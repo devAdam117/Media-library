@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit, Output, SimpleChange  } from '@angular/co
 import { MediaItemFormComponent } from '../media-item-form/media-item-form.component';
 import { MediaItemService } from '../media-item-service';
 
+
 @Component({
   selector: 'app-media-item-list',
   templateUrl: './media-item-list.component.html',
@@ -23,28 +24,24 @@ export class MediaItemListComponent implements OnInit {
          
    })}
   }  
-  refreshPage (mediaItem) {
-    console.log("Page has been updated")
+  refreshPage (mediaItem) {    
     this.mediaItemService.add(mediaItem); 
-    this.sortedItems=this.mediaItemService.get();       
-    console.log("With new media named:"+this.sortedItems[this.sortedItems.length-1].name);
+    this.sortedItems=this.mediaItemService.get();      
+    window.location.reload();     
     
   }
 
-  public ngOnInit(): void {      
-    this.sortedItems=this.mediaItemService.get();   
-      
-      
+   ngOnInit(): void {      
+    this.sortedItems=this.mediaItemService.get();      
   }
  
-  onMediaItemDelete(mediaItem){
-   
+  onMediaItemDelete(mediaItem){   
     this.mediaItemService.delete(mediaItem);
     this.mediaArray=this.mediaItemService.get();
     this.sortedItems=this.mediaArray.filter(res=>{      
       return res.name.toLocaleLowerCase().includes(this.inputVal.toLocaleLowerCase()) ;       
  })
- //this.mediaArray=this.mediaItemService.get();
+ 
     }
   
     

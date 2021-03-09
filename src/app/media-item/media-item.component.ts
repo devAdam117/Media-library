@@ -18,10 +18,9 @@ export class MediaItemComponent implements OnInit {
     };
 
   ngOnInit(): void {
-    console.log(this.mediaItem);
+    
   }
-  onDelete() {
- //console.log("delete");
+  onDelete() { 
  this.delete.emit(this.mediaItem);
  
   }
@@ -35,15 +34,13 @@ export class MediaItemComponent implements OnInit {
     let index = this.mediaArray.map(o => o.name).indexOf(this.mediaItem.name)
     if(this.mediaArray[index].star){
       this.mediaArray[index].star=false;  
-    this.mediaItem.star=false;
-     
+    this.mediaItem.star=false;     
     } 
     else {
       this.mediaArray[index].star=true;
-      this.mediaItem.star=true;
-    
-    }      
-        console.log(this.mediaItem.star)
+      this.mediaItem.star=true;   
+        }      
+        
         localStorage.setItem("medias", JSON.stringify(this.mediaArray));
         
     
