@@ -1,0 +1,26 @@
+section {
+  width: 100%;
+  height: 100vh;
+}
+input {
+  margin-top: 0.8rem;
+  margin-left: 0.6rem;
+  transition: 0.4s;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(70, 70, 218, 0.692);
+  outline: none;
+  width: 70%;
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+
+input:focus {
+  border-bottom: 2px solid rgba(117, 24, 204, 0.473);
+}
+
+::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+  font-weight: 500;
+}

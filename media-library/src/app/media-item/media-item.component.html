@@ -1,0 +1,34 @@
+
+<div [ngClass]="{'movies':mediaItem.medium==='Movies','series':mediaItem.medium==='Series'}"class=" ml-3 item col-lg-11  col-md-12 col-sm-12 mt-5" > 
+<div class="info">
+<h2 > {{mediaItem.name }} </h2>
+<div> {{mediaItem.type}} </div>
+<ng-template [ngIf]="mediaItem.wasWatched">
+<div> {{ mediaItem.wasWatched  }}</div> 
+</ng-template>
+<ng-template [ngIf]="mediaItem.lengthOfEP">
+<div> Length of episode: {{mediaItem.lengthOfEP}} </div>
+</ng-template>
+<ng-template [ngIf]="mediaItem.numberOfEp">
+<div> Episodes: {{mediaItem.numberOfEp}}</div>
+</ng-template>
+<ng-template [ngIf]="mediaItem.whenWatched">
+<div> Was watched on:  {{mediaItem.whenWatched }} </div>
+</ng-template>
+</div>
+<div class="tools mt-1 ">
+    
+    <a class="_toolComp rmvbtn btn btn-danger ml-1 mr-1  " (click)="onDelete()">Remove
+
+    </a>
+
+    <a class="_toolComp wtchbtn btn btn-primary mr-1 ml-1 ">Watch
+
+    </a>
+    <span class="fa fa-star ml-2" (click)="ratingFunc()"[class.rate]="mediaItem.star || isRated"></span>
+
+
+</div>
+</div>
+
+

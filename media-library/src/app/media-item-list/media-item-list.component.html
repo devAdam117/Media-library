@@ -1,0 +1,12 @@
+<input [(ngModel)]="inputVal" class="searchInput"  (input)="searchName()" type="text" placeholder="Search by name">
+
+<section>
+    <div class="container row">
+    <app-media-item class=" item col-lg-4  col-md-6 col-sm-12"
+     *ngFor="let mediaItem of sortedItems "
+      [mediaItem]="mediaItem"
+        (delete)="onMediaItemDelete($event)"
+        ></app-media-item>
+    
+</div>
+</section>

@@ -1,0 +1,103 @@
+form {
+  width: fit-content;
+  box-shadow: 0px 0px 4px white;
+  padding: 0.21rem;
+}
+._form {
+  display: none;
+}
+form ul li input,
+form ul li select {
+  display: block;
+}
+form ul {
+  list-style-type: none;
+}
+form ul li {
+  margin-top: 0.4rem;
+}
+input {
+  transition: 0.4s;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(70, 70, 218, 0.692);
+  outline: none;
+  width: 70%;
+  font-size: 1.07rem;
+  font-weight: 500;
+}
+::placeholder {
+  color: rgb(0, 0, 0);
+  opacity: 1; /* Firefox */
+  font-weight: 500;
+}
+
+input:focus {
+  border-bottom: 2px solid rgba(117, 24, 204, 0.473);
+}
+form label {
+  font-size: 1.33rem;
+  font-weight: 600;
+}
+select {
+  background: transparent;
+  transition: 0.3s;
+  border: rgba(89, 89, 233, 0.637);
+  border-radius: 0.3rem;
+  width: 30%;
+  font-size: 1.07rem;
+  font-weight: 500;
+  color: black;
+}
+option {
+  background: rgba(89, 89, 233, 0.637);
+  border: 30px solid black;
+  border-radius: 0.3rem;
+  font-size: 1.07rem;
+  font-weight: 500;
+  color: black;
+}
+select:hover {
+  background: rgba(89, 89, 233, 0.64);
+}
+button {
+  transition: 0.4s;
+  background: rgba(83, 22, 153, 0.87);
+  padding: 0.5rem 1.1rem;
+  border-radius: 2.3rem;
+  color: rgb(255, 255, 255);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 2px solid rgba(89, 89, 233, 0.64);
+  outline: none;
+  margin-left: 13rem;
+  margin-bottom: 0.2rem;
+}
+button:hover {
+  background: transparent;
+  border: 2px solid rgba(83, 22, 153, 0.87);
+  color: rgba(83, 22, 153, 0.87);
+}
+.disabled {
+  background: rgba(178, 59, 214, 0.432);
+  color: white;
+}
+
+.borderBot {
+  border-bottom: 2px solid rgba(144, 74, 202, 0.76);
+}
+.container {
+  display: block;
+}
+.disBtn {
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+  margin-left: 0rem;
+}
+.searchInput {
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+  width: 80%;
+}

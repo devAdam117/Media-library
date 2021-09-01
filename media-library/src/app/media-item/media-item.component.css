@@ -1,0 +1,93 @@
+.item {
+  background-color: rgba(54, 56, 56, 0.503);
+  box-shadow: 0px 0px 10px rgb(107, 105, 105);
+  color: rgba(255, 255, 255, 0.808);
+  border: 2px solid white;
+  height: fit-content;
+  border-radius: 0.7rem;
+  padding: 5ch 5ch;
+  transition: 0.4s;
+}
+.item h2 {
+  margin-top: 2px;
+  text-align: center;
+}
+.item .info {
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-align: left;
+  line-height: 1.25;
+}
+.item a {
+  cursor: pointer;
+}
+.item:hover {
+  background: rgba(54, 56, 56, 0.829);
+  color: white;
+  transform: scale(1.04);
+  border: 2px solid rgb(18, 86, 187);
+}
+.item:hover + .item h2 {
+  color: red;
+}
+.fa-star {
+  font-size: 2.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: 0.4s;
+  color: white;
+}
+
+.rate {
+  color: orange;
+}
+.fa:active {
+  color: rgba(255, 166, 0, 0.219);
+}
+.series {
+  border: 2px solid rgb(11, 97, 11);
+}
+.series h2 {
+  color: rgb(26, 196, 26);
+}
+.movies {
+  border: 2px solid white;
+}
+.movies h2 {
+  color: rgb(8, 124, 201);
+}
+
+.tools {
+  width: 100%;
+}
+.rmvbtn:hover {
+  background: transparent;
+  color: #dc3545 !important;
+}
+.rmvbtn:active {
+  background: #dc354652 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+.wtchbtn:hover {
+  background: transparent;
+  color: #007bff !important;
+}
+.wtchbtn:active {
+  background: #007bff56 !important;
+  color: white !important;
+  border: 1px solid white !important;
+}
+
+@media only screen and (max-width: 352px) {
+  ._toolComp {
+    display: flex;
+    width: fit-content;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  ._toolComp {
+    display: flex;
+    width: fit-content;
+  }
+}
